@@ -1,0 +1,37 @@
+extract_domain_layer_business_logic:
+  description: >
+    Business Logic Specifications
+    --------------
+    {business_logic}
+    --------------
+
+    Base on the business logic specication, determine:
+    - what part of this logic must be implemented in the domain layer
+
+
+  expected_output: >
+    Business logic parts that must be implemented in the domain layer
+
+  agent: domain_expert
+
+
+bring_expertise_on_domain:
+  description: >
+    Read the python package context and determine if the code needs additionnal modification to fit the business logic
+    that should be implemented in the domain layer
+
+  expected_output: >
+    An explanation about if the code must be modified by a python developer and why.
+
+  agent: domain_expert
+
+
+implement_feature_in_domain:
+  description: >
+    Read the python package context, then implement new domain objects or write necessary modifications to existing modules
+    to fit the following the domain expert instructions
+
+  expected_output: >
+    Explanations about the changes you have made in the code.
+
+  agent: domain_developer
